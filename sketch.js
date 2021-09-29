@@ -6,6 +6,8 @@ const Constraint = Matter.Constraint;
 var engine, world;
 var box1, platform, slingShot;
 
+var score = 0;
+
 function preload() {
    // backgroundImg = loadImage("sprites/bg.png");
    polygonImg = loadImage("polygon.png");
@@ -41,19 +43,29 @@ function draw(){
     ground.display();
     fill ("orange");
     box1.display();
+    box1.score();
     box2.display();
+    box2.score();
     box3.display();
+    box3.score();
     fill ("yellow");
     box4.display();
+    box4.score();
     box5.display();
+    box5.score();
     fill ("pink");
     box6.display();
+    box6.score();
     stand.display();
     fill("blue")
     imageMode(CENTER);
     image(polygonImg,polygon.position.x,polygon.position.y, 40,40);
     slingshot.display();
-   
+  
+    textSize (25);
+    fill ("white")
+    text("SCORE: "+score,600,40);
+  
 }
 
 function mouseDragged(){
